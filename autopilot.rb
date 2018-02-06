@@ -20,6 +20,7 @@ def pick_up_passenger(car)
   "Picked up passenger. Car now has #{car[:passengers]} passengers."
 end
 
+# WORKING
 def get_destination(car)
   if car[:city] == 'Toronto'
     'Mississauga'
