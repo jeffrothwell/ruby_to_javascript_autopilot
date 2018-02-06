@@ -61,6 +61,7 @@ def drop_off_passengers(car)
   "Dropped off #{previous_passengers} passengers."
 end
 
+# WORKING
 def act(car)
   distance_between_cities = 50
 

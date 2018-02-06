@@ -1,7 +1,7 @@
 function getNewCar() {
   return {
     city: 'Toronto',
-    passengers: 0,
+    passengers: 2,
     gas: 100,
   }
 }
@@ -14,6 +14,7 @@ function addCar(cars, new_car) {
 function pickUpPassenger(car) {
   car['passengers'] += 1;
   car['gas'] -= 10;
+  return ('Picked up passenger. car now has ' + car['passengers'] + ' passengers.');
 }
 
 function getDestination(car) {
@@ -55,4 +56,21 @@ function dropOffPassengers(car) {
   var previousPassengers = car['passengers'];
   car['passengers'] = 0;
   return ('Dropped off ' + previousPassengers + ' passengers');
+}
+
+function act(car) {
+  var distanceBetweenCities = 50;
+
+  if (car['gas'] < 20) {
+    return fillUpGas(car);
+  } else if (car['passengers'] < 3) {
+    return pickUpPassenger(car);
+  } else {
+    if (car['gas'] < distanceBetweenCities) {
+      return fillUpGas(car);
+    }
+    var droveTo = drive(car, distanceBetweenCities);
+    var passengersDropped = dropOffPassengers(car);
+    return ('' + droveTo + ' ' + passengersDropped);
+  }
 }
