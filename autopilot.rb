@@ -31,16 +31,19 @@ def get_destination(car)
   end
 end
 
+# WORKING
 def fill_up_gas(car)
   old_gas = car[:gas]
   car[:gas] = 100
   "Filled up to #{ get_gas_display(car[:gas]) } on gas from #{ get_gas_display(old_gas) }."
 end
 
+# WORKING
 def get_gas_display(gas_amount)
   "#{gas_amount}%"
 end
 
+# WORKING
 def drive(car, city_distance)
   if car[:gas] < city_distance
     return fill_up_gas(car)
