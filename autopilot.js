@@ -1,7 +1,7 @@
 function getNewCar() {
   return {
     city: 'Toronto',
-    passengers: 2,
+    passengers: 0,
     gas: 100,
   }
 }
@@ -14,7 +14,7 @@ function addCar(cars, new_car) {
 function pickUpPassenger(car) {
   car['passengers'] += 1;
   car['gas'] -= 10;
-  return ('Picked up passenger. car now has ' + car['passengers'] + ' passengers.');
+  return ('Picked up passenger. Car now has ' + car['passengers'] + ' passengers.');
 }
 
 function getDestination(car) {
@@ -74,3 +74,22 @@ function act(car) {
     return ('' + droveTo + ' ' + passengersDropped);
   }
 }
+
+function commandFleet(cars) {
+  for (var i = 0; i < cars.length; i++) {
+    var action = act(cars[i]);
+    console.log('Car ' + (i + 1) + ': ' + action);
+  }
+  console.log('---');
+}
+
+function addOneCarPerDay(cars, numDays) {
+  for (var i = 0; i < numDays; i++) {
+    var newCar = getNewCar();
+    console.log(addCar(cars, newCar));
+    commandFleet(cars);
+  }
+}
+
+cars = [];
+addOneCarPerDay(cars, 10);
