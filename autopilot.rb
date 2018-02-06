@@ -1,4 +1,4 @@
-
+# WORKING
 def get_new_car
   {
     city: 'Toronto',
@@ -7,11 +7,13 @@ def get_new_car
   }
 end
 
+# WORKING
 def add_car(cars, new_car)
   cars << new_car
   "Adding new car to fleet. Fleet size is now #{cars.length}."
 end
 
+# WORKING
 def pick_up_passenger(car)
   car[:passengers] += 1
   car[:gas] -= 10

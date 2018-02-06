@@ -11,8 +11,12 @@ function addCar(cars, new_car) {
   return ('Adding new car to fleet. Fleet size is now ' + cars.length)
 }
 
-var cars = [];
-newCar = getNewCar();
-msg = addCar(cars, newCar);
-console.log(msg);
-console.log(cars);
+function pick_up_passenger(car) {
+  car['passengers'] += 1;
+  car['gas'] -= 10;
+}
+// car = getNewCar();
+// pick_up_passenger(car);
+// console.log(car);
+
+// var cars = [];
