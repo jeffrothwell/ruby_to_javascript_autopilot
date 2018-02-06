@@ -48,8 +48,11 @@ function drive(car, cityDistance) {
     car['city'] +
     '. Remaining gas: ' +
     getGasDisplay(car['gas'])
-  )
+  );
 }
-car = getNewCar();
-console.log(drive(car, 50));
-console.log(car);
+
+function dropOffPassengers(car) {
+  var previousPassengers = car['passengers'];
+  car['passengers'] = 0;
+  return ('Dropped off ' + previousPassengers + ' passengers');
+}

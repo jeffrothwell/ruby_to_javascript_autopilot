@@ -54,6 +54,7 @@ def drive(car, city_distance)
   "Drove to #{car[:city]}. Remaining gas: #{ get_gas_display(car[:gas]) }."
 end
 
+# WORKING
 def drop_off_passengers(car)
   previous_passengers = car[:passengers]
   car[:passengers] = 0
